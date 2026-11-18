@@ -160,7 +160,7 @@ h2 { margin: 0 0 22px; font-size: clamp(40px, 4.3vw, 64px); font-weight: 700; li
 .slider-button:hover { background: #ffffff10; }
 .slider-button:disabled { cursor: not-allowed; opacity: .3; }
 .slider-counter { min-width: 60px; color: var(--muted); text-align: center; font: 13px Arial, sans-serif; }
-.media-slider { display: flex; gap: 12px; overflow-x: auto; padding: 0 6vw 20px; direction: ltr; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none; }
+.media-slider { display: flex; gap: 12px; overflow-x: auto; padding: 0 max(6vw, calc((100vw - clamp(300px, 34vw, 460px)) / 2)) 20px; direction: ltr; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none; }
 .media-slider::-webkit-scrollbar { display: none; }
 .media-slider.is-dragging { cursor: grabbing; scroll-snap-type: none; }
 .slider-slide { flex: 0 0 clamp(300px, 34vw, 460px); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; scroll-snap-align: center; scroll-snap-stop: always; background: var(--surface); }
@@ -280,7 +280,7 @@ dialog p { line-height: 1.8; }
   .body-copy { font-size: 16px; }
   .media-slider-section { padding: 70px 0 75px; }
   .slider-heading { align-items: center; flex-direction: column; padding: 0 7vw; }
-  .media-slider { gap: 8px; padding-inline: 7vw; }
+  .media-slider { gap: 8px; padding-inline: 9vw; }
   .slider-slide { flex-basis: 82vw; }
   .reserve-strip { align-items: center; flex-direction: column; padding: 45px 7vw; }
   .reserve-strip-button { width: 100%; }

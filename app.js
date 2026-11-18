@@ -127,16 +127,67 @@ const slides = [...slider.querySelectorAll('.slider-slide')];
 const sliderCounter = document.getElementById('sliderCounter');
 let activeSlide = 0;
 
-function goToSlide(index) {
-  activeSlide = Math.max(0, Math.min(index, slides.length - 1));
-  slides[activeSlide].scrollIntoView({
-    behavior: reducedMotion.matches ? 'auto' : 'smooth',
-    block: 'nearest',
-    inline: 'center'
+function createLoopClone(slide) {
+  const clone = slide.cloneNode(true);
+  clone.classList.add('is-loop-clone');
+  clone.setAttribute('aria-hidden', 'true');
+  clone.querySelectorAll('[data-alt-t]').forEach((element) => element.removeAttribute('data-alt-t'));
+  clone.querySelectorAll('img').forEach((image) => {
+    image.alt = '';
+    image.loading = 'lazy';
   });
+  return clone;
+}
+
+if (slides.length > 1) {
+  slider.prepend(createLoopClone(slides.at(-1)));
+  slider.append(createLoopClone(slides[0]));
+}
+
+const loopSlides = [...slider.querySelectorAll('.slider-slide')];
+
+function slideLeft(slide) {
+  return slide.offsetLeft - (slider.clientWidth - slide.offsetWidth) / 2;
+}
+
+function scrollToLoopSlide(index, behavior = 'smooth') {
+  slider.scrollTo({ left: slideLeft(loopSlides[index]), behavior });
+}
+
+function updateSliderStatus(loopIndex) {
+  if (slides.length <= 1) activeSlide = 0;
+  else if (loopIndex === 0) activeSlide = slides.length - 1;
+  else if (loopIndex === loopSlides.length - 1) activeSlide = 0;
+  else activeSlide = loopIndex - 1;
+
   sliderCounter.textContent = `${activeSlide + 1} / ${slides.length}`;
-  sliderPrev.disabled = activeSlide === 0;
-  sliderNext.disabled = activeSlide === slides.length - 1;
+  sliderPrev.disabled = slides.length <= 1;
+  sliderNext.disabled = slides.length <= 1;
+}
+
+function nearestLoopSlide() {
+  const center = slider.getBoundingClientRect().left + slider.clientWidth / 2;
+  return loopSlides.reduce((best, slide, index) => {
+    const bounds = slide.getBoundingClientRect();
+    const distance = Math.abs(bounds.left + bounds.width / 2 - center);
+    return distance < best.distance ? { index, distance } : best;
+  }, { index: 0, distance: Infinity }).index;
+}
+
+function normalizeLoopPosition() {
+  if (slides.length <= 1) return;
+  const loopIndex = nearestLoopSlide();
+  if (loopIndex === 0) scrollToLoopSlide(slides.length, 'auto');
+  if (loopIndex === loopSlides.length - 1) scrollToLoopSlide(1, 'auto');
+}
+
+function goToSlide(index) {
+  if (slides.length <= 1) return;
+  const loopIndex = index < 0 ? 0 : index >= slides.length ? loopSlides.length - 1 : index + 1;
+  activeSlide = (index + slides.length) % slides.length;
+  updateSliderStatus(loopIndex);
+  scrollToLoopSlide(loopIndex, reducedMotion.matches ? 'auto' : 'smooth');
+  if (reducedMotion.matches) normalizeLoopPosition();
 }
 
 sliderPrev.addEventListener('click', () => goToSlide(activeSlide - 1));
@@ -179,23 +230,16 @@ slider.addEventListener('pointerup', stopSliderDrag);
 slider.addEventListener('pointercancel', stopSliderDrag);
 
 let sliderFrame;
+let sliderSettleTimer;
 slider.addEventListener('scroll', () => {
   cancelAnimationFrame(sliderFrame);
+  clearTimeout(sliderSettleTimer);
   sliderFrame = requestAnimationFrame(() => {
-    const center = slider.getBoundingClientRect().left + slider.clientWidth / 2;
-    const nearest = slides.reduce((best, slide, index) => {
-      const bounds = slide.getBoundingClientRect();
-      const distance = Math.abs(bounds.left + bounds.width / 2 - center);
-      return distance < best.distance ? { index, distance } : best;
-    }, { index: 0, distance: Infinity });
-    activeSlide = nearest.index;
-    sliderCounter.textContent = `${activeSlide + 1} / ${slides.length}`;
-    sliderPrev.disabled = activeSlide === 0;
-    sliderNext.disabled = activeSlide === slides.length - 1;
+    updateSliderStatus(nearestLoopSlide());
   });
+  sliderSettleTimer = setTimeout(normalizeLoopPosition, 140);
 }, { passive: true });
 
 updateLanguage();
-sliderCounter.textContent = `1 / ${slides.length}`;
-sliderPrev.disabled = true;
-sliderNext.disabled = slides.length <= 1;
+updateSliderStatus(slides.length > 1 ? 1 : 0);
+if (slides.length > 1) scrollToLoopSlide(1, 'auto');
