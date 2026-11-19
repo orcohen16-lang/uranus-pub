@@ -57,12 +57,26 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px s
 .wordmark img { position: absolute; top: 50%; left: 50%; width: 122px; max-width: none; height: auto; transform: translate(-50%, -50%); mix-blend-mode: screen; }
 .header-contact { display: flex; flex-direction: column; gap: 2px; direction: rtl; text-align: right; color: var(--muted); font-size: 11px; }
 .header-contact span { white-space: nowrap; }
-.phone { align-self: flex-end; color: var(--cream); font: 700 18px Arial, sans-serif; letter-spacing: 1px; }
 .last-guest { font-size: 10px; }
 nav { display: flex; align-items: center; gap: 10px; direction: rtl; }
 html[dir='ltr'] nav { direction: ltr; }
 html[dir='ltr'] .header-contact { direction: ltr; text-align: left; }
-html[dir='ltr'] .phone { align-self: flex-start; }
+.header-actions { display: flex; align-items: center; gap: 3px; }
+.header-action {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: transparent;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.header-action:hover { color: var(--gold); background: #ffffff0d; transform: translateY(-1px); }
+.header-action svg { width: 23px; height: 23px; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+.header-action .waze-line-icon { width: 27px; height: 27px; stroke-width: 1.35; }
 
 .button, .outline {
   display: inline-flex;
@@ -83,35 +97,6 @@ html[dir='ltr'] .phone { align-self: flex-start; }
 .outline:hover { background: #ffffff0c; border-color: #ffffff70; }
 .small { min-height: 42px; padding: 10px 17px; }
 .language { padding: 12px; border: 0; background: none; font-size: 12px; letter-spacing: 1px; }
-
-.floating-actions {
-  position: fixed;
-  z-index: 40;
-  left: 18px;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  direction: ltr;
-}
-.floating-action {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 48px;
-  padding: 7px 13px 7px 7px;
-  border: 1px solid #ffffff3b;
-  border-radius: 999px;
-  color: #17110f;
-  background: #f7f2e9;
-  box-shadow: 0 8px 30px #0007;
-  font-size: 12px;
-  font-weight: 700;
-}
-.floating-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; color: #fff; background: var(--red); font: 700 17px Arial, sans-serif; }
-.floating-waze { overflow: hidden; background: #8ddfea; }
-.floating-waze img { width: 27px; height: 27px; object-fit: contain; }
 
 .hero {
   position: relative;
@@ -175,7 +160,7 @@ h2 { margin: 0 0 22px; font-size: clamp(40px, 4.3vw, 64px); font-weight: 700; li
 .slider-button:hover { background: #ffffff10; }
 .slider-button:disabled { cursor: not-allowed; opacity: .3; }
 .slider-counter { min-width: 60px; color: var(--muted); text-align: center; font: 13px Arial, sans-serif; }
-.media-slider { display: flex; gap: 12px; overflow-x: auto; padding: 0 6vw 20px; direction: ltr; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none; }
+.media-slider { display: flex; gap: 12px; overflow-x: auto; padding: 0 max(6vw, calc((100vw - clamp(300px, 34vw, 460px)) / 2)) 20px; direction: ltr; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none; }
 .media-slider::-webkit-scrollbar { display: none; }
 .media-slider.is-dragging { cursor: grabbing; scroll-snap-type: none; }
 .slider-slide { flex: 0 0 clamp(300px, 34vw, 460px); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; scroll-snap-align: center; scroll-snap-stop: always; background: var(--surface); }
@@ -277,11 +262,11 @@ dialog p { line-height: 1.8; }
   nav { gap: 4px; }
   .nav-menu { display: none; }
   .language { padding: 8px; }
-  .small { min-height: 42px; max-width: 175px; padding: 9px 12px; font-size: 11px; }
-  .floating-actions { top: 80px; left: 12px; gap: 7px; }
-  .floating-action { min-height: 43px; padding: 5px; }
-  .floating-icon { width: 33px; height: 33px; }
-  .floating-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .site-header nav > .small { display: none; }
+  .header-actions { gap: 0; }
+  .header-action { width: 42px; height: 42px; flex-basis: 42px; }
+  .header-action svg { width: 22px; height: 22px; }
+  .header-action .waze-line-icon { width: 26px; height: 26px; }
   .hero { min-height: 690px; height: 100svh; padding: 135px 7vw 95px; }
   .hero-media video { object-position: 50% 40%; }
   .hero h1 { font-size: clamp(66px, 21vw, 90px); letter-spacing: -3px; }
@@ -295,7 +280,7 @@ dialog p { line-height: 1.8; }
   .body-copy { font-size: 16px; }
   .media-slider-section { padding: 70px 0 75px; }
   .slider-heading { align-items: center; flex-direction: column; padding: 0 7vw; }
-  .media-slider { gap: 8px; padding-inline: 7vw; }
+  .media-slider { gap: 8px; padding-inline: 9vw; }
   .slider-slide { flex-basis: 82vw; }
   .reserve-strip { align-items: center; flex-direction: column; padding: 45px 7vw; }
   .reserve-strip-button { width: 100%; }
