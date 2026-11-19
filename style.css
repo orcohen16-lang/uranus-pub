@@ -139,10 +139,11 @@ h2 { margin: 0 0 22px; font-size: clamp(40px, 4.3vw, 64px); font-weight: 700; li
 
 .beer-card-feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); min-height: 540px; border-bottom: 1px solid var(--line); background: #090706; }
 .beer-card-media { display: grid; min-height: 540px; padding: clamp(35px, 6vw, 85px); place-items: center; background: radial-gradient(circle at 50% 45%, #f2a5212b, transparent 58%), #120d0a; }
-.beer-card-media img { width: min(100%, 860px); border-radius: 18px; box-shadow: 0 28px 75px #0009; }
+.beer-card-media img { width: min(100%, 860px); height: auto; aspect-ratio: 1200 / 630; object-fit: contain; border-radius: 18px; box-shadow: 0 28px 75px #0009; }
 .beer-card-copy { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 70px 7vw; background: radial-gradient(circle at 20% 20%, #6d211e42, transparent 45%), var(--surface); text-align: center; }
 .beer-card-copy .eyebrow { text-align: center; }
 .beer-card-copy h2 { max-width: 560px; }
+.beer-card-details { max-width: 520px; margin: 4px 0 0; color: var(--muted); font-size: clamp(18px, 1.6vw, 23px); line-height: 1.7; }
 
 .beer-feature, .stage-feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); min-height: 630px; background: #0a0706; }
 .beer-feature-media, .stage-feature-media { min-height: 630px; overflow: hidden; }

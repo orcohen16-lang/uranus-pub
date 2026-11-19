@@ -21,7 +21,7 @@ const en = {
   aboutTitle: 'About us',
   about: 'Netanya’s true, authentic English pub has been here since 1980, bringing together long-time regulars and a young atmosphere. Whether it’s a date at the bar, beers with friends, or just a craving for our wings, Uranus Pub is exactly the place for you.',
   beerCardTitle: 'Our beer card.',
-  beerCardCta: 'Details on WhatsApp',
+  beerCardDetails: 'Beer card - 10 large draft beers in total',
   happyText: 'Every day from 18:00 to 20:00, our Happy Hour gives you 30% off the entire food and alcohol menu.',
   sliderTitle: 'The food. The drinks. The pub.',
   sliderPrev: 'Previous image',
