@@ -48,9 +48,7 @@ const en = {
   visitTitle: 'Opening hours',
   address: '13 Kikar Ha’atsmaut, Netanya',
   opening: 'Sunday–Saturday | 18:00–01:30 | Until the last guest leaves',
-  waze: 'Navigate with Waze ↗',
-  menuNote: 'The menu will be added soon. In the meantime, contact us on WhatsApp.',
-  whatsapp: 'Open WhatsApp'
+  waze: 'Navigate with Waze ↗'
 };
 
 const textElements = [...document.querySelectorAll('[data-t]')];
@@ -91,16 +89,6 @@ function updateLanguage() {
 languageButton.addEventListener('click', () => {
   english = !english;
   updateLanguage();
-});
-
-const dialog = document.getElementById('menuDialog');
-document.querySelectorAll('[data-menu]').forEach((button) => button.addEventListener('click', () => dialog.showModal()));
-document.getElementById('closeMenu').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', (event) => {
-  if (event.target !== dialog) return;
-  const bounds = dialog.getBoundingClientRect();
-  const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
-  if (outside) dialog.close();
 });
 
 const video = document.getElementById('heroVideo');

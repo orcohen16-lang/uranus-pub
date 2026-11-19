@@ -235,11 +235,6 @@ footer { display: flex; justify-content: space-between; gap: 32px; padding: 35px
 .footer-support { align-items: flex-start; }
 .social-links { display: flex; gap: 22px; direction: ltr; }
 
-dialog { width: calc(100% - 40px); max-width: 480px; padding: 45px; border: 1px solid var(--line); border-radius: 4px; color: var(--cream); background: #261914; box-shadow: 0 30px 100px #0009; }
-dialog::backdrop { background: #000c; backdrop-filter: blur(5px); }
-dialog p { line-height: 1.8; }
-.close { position: absolute; top: 8px; inset-inline-end: 15px; border: 0; background: none; font-size: 28px; }
-
 .legal-header { position: static; }
 .legal-page { max-width: 920px; margin: 0 auto; padding: 80px 7vw 110px; }
 .legal-page h1 { margin: 0 0 28px; font-size: clamp(48px, 7vw, 82px); line-height: 1; letter-spacing: -2px; }
@@ -268,7 +263,7 @@ dialog p { line-height: 1.8; }
   .wordmark img { width: 78px; }
   .header-contact { display: none; }
   nav { gap: 4px; }
-  .nav-menu { display: none; }
+  .nav-menu { min-height: 38px; padding: 8px 12px; font-size: 12px; }
   .language { padding: 8px; }
   .site-header nav > .small { display: none; }
   .header-actions { gap: 0; }
