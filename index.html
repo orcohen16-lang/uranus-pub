@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; connect-src 'self' https://www.facebook.com https://connect.facebook.net; img-src 'self' data: https://www.facebook.com; style-src 'self'; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="description" content="אורנוס פאב - הבר האנגלי של נתניה מאז 1980. כיכר העצמאות 13. שמירת מקומות בווטסאפ.">
   <title>אורנוס פאב | מאז 1980</title>
-  <link rel="icon" href="assets/logo.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo-wordmark.png">
+  <link rel="stylesheet" href="style.css?v=20261119">
   <link rel="stylesheet" href="accessibility.css">
   <script src="meta-pixel.js" defer></script>
 </head>
@@ -20,7 +20,7 @@
   <header class="site-header">
     <div class="brand-contact">
       <a class="wordmark" href="#home" aria-label="Uranus Pub home">
-        <img src="assets/logo.png" alt="Uranus Pub - Since 1980" width="1080" height="1350">
+        <img src="assets/logo-wordmark.png" alt="Uranus Pub - Since 1980" width="1080" height="1080">
       </a>
       <div class="header-contact">
         <span data-t="headerHours">ראשון עד שבת · 18:00-01:30</span>
@@ -36,10 +36,11 @@
         </a>
         <a class="header-action" href="https://waze.com/ul/hsv8zcjdgs" target="_blank" rel="noopener" data-label-t="wazeLabel" aria-label="ניווט לאורנוס פאב ב־Waze">
           <svg class="waze-line-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 13v-2a8 8 0 0 1 16 0v3a4 4 0 0 1-4 4H9l-4 2v-3.2A4 4 0 0 1 4 13Z"/>
-            <path d="M9 11h.01M15 11h.01M9.5 14c.7.7 1.55 1 2.5 1s1.8-.3 2.5-1"/>
-            <circle cx="8" cy="19" r="1.5"/>
-            <circle cx="17" cy="19" r="1.5"/>
+            <path d="M5 13 6.6 8.8A2.8 2.8 0 0 1 9.2 7h5.6a2.8 2.8 0 0 1 2.6 1.8L19 13"/>
+            <path d="M4 13h16a2 2 0 0 1 2 2v3H2v-3a2 2 0 0 1 2-2Z"/>
+            <path d="M6 16h.01M18 16h.01"/>
+            <circle cx="6" cy="19" r="1.5"/>
+            <circle cx="18" cy="19" r="1.5"/>
           </svg>
         </a>
       </div>
@@ -81,6 +82,17 @@
       </div>
     </section>
 
+    <section class="beer-card-feature" aria-labelledby="beer-card-title">
+      <div class="beer-card-media">
+        <img src="assets/beer-card.png" alt="כרטיסיית הבירות של אורנוס פאב" loading="lazy" width="1200" height="630">
+      </div>
+      <div class="beer-card-copy">
+        <p class="eyebrow">OUR BEER CARD</p>
+        <h2 id="beer-card-title" data-t="beerCardTitle">כרטיסיית הבירות שלנו.</h2>
+        <a class="button" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="beerCardCta">לפרטים בווטסאפ</a>
+      </div>
+    </section>
+
     <section class="beer-feature" aria-labelledby="happy-title">
       <div class="beer-feature-media">
         <img src="assets/photo-library/bar-action.webp" alt="אורחים מרימים כוסית על הבר באורנוס פאב" loading="lazy" width="2400" height="1600">
@@ -100,7 +112,7 @@
         <div><p class="eyebrow">FOOD. DRINKS. GOOD NIGHTS.</p><h2 id="slider-title" data-t="sliderTitle">האוכל. השתייה. האורנוס.</h2></div>
         <div class="slider-controls">
           <button class="slider-button" id="sliderPrev" type="button" data-label-t="sliderPrev" aria-label="לתמונה הקודמת">←</button>
-          <span class="slider-counter" id="sliderCounter" aria-live="polite">1 / 10</span>
+          <span class="slider-counter" id="sliderCounter" aria-live="polite">1 / 11</span>
           <button class="slider-button" id="sliderNext" type="button" data-label-t="sliderNext" aria-label="לתמונה הבאה">→</button>
         </div>
       </div>
@@ -115,6 +127,7 @@
         <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-08-beer-tap.webp" data-alt-t="slide8Alt" alt="מוזגים בירה קרה מהברז" loading="lazy" width="1080" height="1350"></figure>
         <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-09-pub-crowd.webp" data-alt-t="slide9Alt" alt="הקהל והאווירה באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
         <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-10-pub-poster.webp" data-alt-t="slide10Alt" alt="פריט וינטג׳ על קיר הפאב" loading="lazy" width="1080" height="1350"></figure>
+        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-11-beers-table.webp" data-alt-t="slide11Alt" alt="שולחן חברים עם בירות באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
       </div>
     </section>
 
@@ -142,6 +155,7 @@
         <figure><img src="assets/photo-library/best%2010/29.webp" alt="מזיגת בירה טרייה מהברז" loading="lazy" width="1080" height="1350"></figure>
         <figure><img src="assets/photo-library/best%2010/DSC06992.webp" alt="אורחת נהנית מכוס בירה באורנוס" loading="lazy" width="2400" height="1600"></figure>
         <figure><img src="assets/photo-library/best%2010/22.webp" alt="אוכל ושתייה סביב שולחן באורנוס" loading="lazy" width="1080" height="1350"></figure>
+        <figure><img src="assets/photo-library/best%2010/friends.webp" alt="חברים מבלים יחד באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
       </div>
     </section>
 
@@ -197,6 +211,6 @@
   </footer>
 
   <dialog id="menuDialog"><button id="closeMenu" class="close" type="button" aria-label="Close">×</button><p class="eyebrow">URANUS PUB</p><h2 data-t="menu">לתפריט</h2><p data-t="menuNote">התפריט יצורף בהמשך. בינתיים אפשר לפנות אלינו בווטסאפ.</p><a class="button" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="whatsapp">לוואטסאפ</a></dialog>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261119"></script>
 </body>
 </html>

@@ -54,7 +54,7 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px s
 
 .brand-contact { display: flex; align-items: center; gap: 20px; }
 .wordmark { position: relative; display: block; flex-shrink: 0; width: 68px; height: 66px; overflow: hidden; }
-.wordmark img { position: absolute; top: 50%; left: 50%; width: 122px; max-width: none; height: auto; transform: translate(-50%, -50%); mix-blend-mode: screen; }
+.wordmark img { position: absolute; top: 50%; left: 50%; width: 90px; max-width: none; height: auto; transform: translate(-50%, -50%); mix-blend-mode: screen; }
 .header-contact { display: flex; flex-direction: column; gap: 2px; direction: rtl; text-align: right; color: var(--muted); font-size: 11px; }
 .header-contact span { white-space: nowrap; }
 .last-guest { font-size: 10px; }
@@ -136,6 +136,13 @@ h2 { margin: 0 0 22px; font-size: clamp(40px, 4.3vw, 64px); font-weight: 700; li
 .story-copy { margin: 0 auto 26px; color: var(--muted); font-size: clamp(18px, 1.5vw, 22px); line-height: 1.9; }
 .story-hours { margin: 0 0 14px; font-size: 17px; }
 .story-cheers { margin: 0; color: #fff; font-size: 21px; font-weight: 700; }
+
+.beer-card-feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); min-height: 540px; border-bottom: 1px solid var(--line); background: #090706; }
+.beer-card-media { display: grid; min-height: 540px; padding: clamp(35px, 6vw, 85px); place-items: center; background: radial-gradient(circle at 50% 45%, #f2a5212b, transparent 58%), #120d0a; }
+.beer-card-media img { width: min(100%, 860px); border-radius: 18px; box-shadow: 0 28px 75px #0009; }
+.beer-card-copy { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 70px 7vw; background: radial-gradient(circle at 20% 20%, #6d211e42, transparent 45%), var(--surface); text-align: center; }
+.beer-card-copy .eyebrow { text-align: center; }
+.beer-card-copy h2 { max-width: 560px; }
 
 .beer-feature, .stage-feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); min-height: 630px; background: #0a0706; }
 .beer-feature-media, .stage-feature-media { min-height: 630px; overflow: hidden; }
@@ -245,7 +252,8 @@ dialog p { line-height: 1.8; }
 .legal-footer { justify-content: center; text-align: center; }
 
 @media (max-width: 900px) {
-  .beer-feature, .stage-feature { grid-template-columns: 1fr; }
+  .beer-card-feature, .beer-feature, .stage-feature { grid-template-columns: 1fr; }
+  .beer-card-media { min-height: auto; }
   .beer-feature-media, .stage-feature-media { min-height: 500px; }
   .stage-feature-media { order: 0; }
   .beer-feature-copy, .stage-feature-copy { padding: 70px 8vw; }
@@ -257,7 +265,7 @@ dialog p { line-height: 1.8; }
   html { scroll-padding-top: 70px; }
   .site-header { min-height: 68px; padding: 5px 4vw; }
   .wordmark { width: 58px; height: 56px; }
-  .wordmark img { width: 105px; }
+  .wordmark img { width: 78px; }
   .header-contact { display: none; }
   nav { gap: 4px; }
   .nav-menu { display: none; }
@@ -275,6 +283,9 @@ dialog p { line-height: 1.8; }
   .story-section { padding: 75px 7vw 80px; }
   .story-copy { font-size: 17px; }
   .story-hours { font-size: 15px; }
+  .beer-card-media { padding: 42px 7vw; }
+  .beer-card-copy { padding: 55px 7vw; }
+  .beer-card-copy h2 { font-size: clamp(28px, 8.2vw, 36px); }
   .beer-feature-media, .stage-feature-media { min-height: 360px; }
   .beer-feature-copy, .stage-feature-copy { padding: 60px 7vw; }
   .body-copy { font-size: 16px; }
