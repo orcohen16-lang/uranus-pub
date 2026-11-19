@@ -20,6 +20,8 @@ const en = {
   scroll: 'Meet Uranus Pub ↓',
   aboutTitle: 'About us',
   about: 'Netanya’s true, authentic English pub has been here since 1980, bringing together long-time regulars and a young atmosphere. Whether it’s a date at the bar, beers with friends, or just a craving for our wings, Uranus Pub is exactly the place for you.',
+  beerCardTitle: 'Our beer card.',
+  beerCardDetails: 'Beer card - 10 large draft beers in total',
   happyText: 'Every day from 18:00 to 20:00, our Happy Hour gives you 30% off the entire food and alcohol menu.',
   sliderTitle: 'The food. The drinks. The pub.',
   sliderPrev: 'Previous image',
@@ -35,9 +37,10 @@ const en = {
   slide8Alt: 'Cold beer poured from the tap',
   slide9Alt: 'The crowd and atmosphere at Uranus Pub',
   slide10Alt: 'Vintage wall art inside the pub',
+  slide11Alt: 'A table of friends with beers at Uranus Pub',
   reserveStripTitle: 'Your table is waiting.',
-  stageEyebrow: 'SUNDAY · JAM',
-  stageTitle: 'Jam',
+  stageEyebrow: 'SUNDAY · OPEN STAGE',
+      stageTitle: 'MUSIC JAM',
   stage: 'Is your Sunday free? We hope so, because every other Sunday at 22:00 is the time to come to Uranus Pub for our jam: live performances, cold beer and a warm atmosphere.',
   stageExtra: 'It is also your chance to sing and perform in the jam!',
   instagram: 'Stay up to date — details on Instagram.',
@@ -45,9 +48,7 @@ const en = {
   visitTitle: 'Opening hours',
   address: '13 Kikar Ha’atsmaut, Netanya',
   opening: 'Sunday–Saturday | 18:00–01:30 | Until the last guest leaves',
-  waze: 'Navigate with Waze ↗',
-  menuNote: 'The menu will be added soon. In the meantime, contact us on WhatsApp.',
-  whatsapp: 'Open WhatsApp'
+  waze: 'Navigate with Waze ↗'
 };
 
 const textElements = [...document.querySelectorAll('[data-t]')];
@@ -88,16 +89,6 @@ function updateLanguage() {
 languageButton.addEventListener('click', () => {
   english = !english;
   updateLanguage();
-});
-
-const dialog = document.getElementById('menuDialog');
-document.querySelectorAll('[data-menu]').forEach((button) => button.addEventListener('click', () => dialog.showModal()));
-document.getElementById('closeMenu').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', (event) => {
-  if (event.target !== dialog) return;
-  const bounds = dialog.getBoundingClientRect();
-  const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
-  if (outside) dialog.close();
 });
 
 const video = document.getElementById('heroVideo');
