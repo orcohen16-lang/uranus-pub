@@ -70,8 +70,8 @@ function showConsentBanner() {
   banner.innerHTML = `
     <div class="privacy-consent-copy">
       <h2 id="privacyConsentTitle">פרטיות באתר <span lang="en" dir="ltr">· Website privacy</span></h2>
-      <p>אנחנו משתמשים ב־Meta Pixel למדידת פרסום רק לאחר אישורך.</p>
-      <p class="privacy-consent-en" lang="en" dir="ltr">We use Meta Pixel for advertising measurement only after you consent.</p>
+      <p>אנו משתמשים בעוגיות ובטכנולוגיות דומות, לרבות של צדדים שלישיים, לצורך תפעול האתר, מדידת פעילות ושיפור הפרסום. כלים שאינם חיוניים יופעלו רק לאחר אישורך.</p>
+      <p class="privacy-consent-en" lang="en" dir="ltr">We use cookies and similar technologies, including third-party tools, to operate the site, measure activity and improve advertising. Non-essential tools load only after you consent.</p>
       <a href="privacy.html">מדיניות פרטיות / Privacy policy</a>
     </div>
     <div class="privacy-consent-actions">
