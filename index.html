@@ -2,213 +2,79 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; connect-src 'self' https://www.facebook.com https://connect.facebook.net; img-src 'self' data: https://www.facebook.com; style-src 'self'; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <meta name="description" content="אורנוס פאב - הבר האנגלי של נתניה מאז 1980. כיכר העצמאות 13. שמירת מקומות בווטסאפ.">
-  <title>אורנוס פאב | מאז 1980</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080706">
+  <meta name="description" content="אורנוס פאב - הפאב האנגלי של נתניה מאז 1980. כיכר העצמאות 13, נתניה.">
+  <title>אורנוס פאב | נתניה מאז 1980</title>
   <link rel="icon" href="assets/logo-wordmark.png">
-  <link rel="stylesheet" href="style.css?v=20261119">
-  <link rel="stylesheet" href="accessibility.css?v=20261119">
-  <script src="meta-pixel.js?v=20261119-2" defer></script>
+  <link rel="preload" href="assets/fonts/opensanshebrew-bold-webfont.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261120">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">דילוג לתוכן המרכזי</a>
+  <a class="skip-link" href="#main-content" data-t="skip">דילוג לתוכן המרכזי</a>
 
-  <header class="site-header">
-    <div class="brand-contact">
-      <a class="wordmark" href="#home" aria-label="Uranus Pub home">
-        <img src="assets/logo-wordmark.png" alt="Uranus Pub - Since 1980" width="1080" height="1080">
+  <div class="background" aria-hidden="true">
+    <video id="background-video" autoplay muted loop playsinline preload="auto" poster="assets/photo-library/bar-action.webp">
+      <source src="assets/pub-night.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="shade" aria-hidden="true"></div>
+
+  <header class="site-header" data-label-t="headerLabel" aria-label="קישורים מהירים">
+    <a class="logo" href="#main-content" data-label-t="homeLabel" aria-label="אורנוס פאב - לדף הבית">
+      <img src="assets/logo-wordmark.png" alt="Uranus Pub - Since 1980" width="1080" height="1080">
+    </a>
+
+    <nav class="quick-actions" data-label-t="navLabel" aria-label="יצירת קשר וניווט">
+      <a class="icon-link" href="tel:+97298829919" data-label-t="callLabel" aria-label="חיוג לאורנוס פאב, 09-882-9919">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5 9.3 8 7.9 9.7c1 2.1 2.5 3.6 4.6 4.6l1.7-1.4 4.5 2.1v3.2c0 1-.8 1.8-1.8 1.8C9.8 20 4 14.2 4 7.1c0-1 .8-1.8 1.8-1.8h1.4Z"/></svg>
       </a>
-      <div class="header-contact">
-        <span data-t="headerHours">ראשון עד שבת · 18:00-01:30</span>
-        <span class="last-guest" data-t="lastGuest">ועד אחרון הלקוחות</span>
-      </div>
-    </div>
-    <nav aria-label="ניווט ראשי">
-      <div class="header-actions" aria-label="יצירת קשר וניווט">
-        <a class="header-action" href="tel:+97298829919" data-label-t="callLabel" aria-label="התקשרו לאורנוס פאב">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/>
-          </svg>
-        </a>
-        <a class="header-action" href="https://waze.com/ul/hsv8zcjdgs" target="_blank" rel="noopener" data-label-t="wazeLabel" aria-label="ניווט לאורנוס פאב ב־Waze">
-          <svg class="waze-line-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13 6.6 8.8A2.8 2.8 0 0 1 9.2 7h5.6a2.8 2.8 0 0 1 2.6 1.8L19 13"/>
-            <path d="M4 13h16a2 2 0 0 1 2 2v3H2v-3a2 2 0 0 1 2-2Z"/>
-            <path d="M6 16h.01M18 16h.01"/>
-            <circle cx="6" cy="19" r="1.5"/>
-            <circle cx="18" cy="19" r="1.5"/>
-          </svg>
-        </a>
-      </div>
-      <button class="language" id="language" type="button" aria-label="Switch to English">EN</button>
-      <a data-t="menu" class="outline nav-menu" href="assets/uranus-menu.pdf" target="_blank" rel="noopener">לתפריט</a>
-      <a class="button small" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="reserve">שמירת מקומות בווטסאפ</a>
+      <a class="icon-link" href="https://waze.com/ul/hsv8zcjdgs" target="_blank" rel="noopener" data-label-t="wazeLabel" aria-label="ניווט לאורנוס פאב ב-Waze">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.3c-5 0-8.4 3.3-8.4 7.9v1.2c0 1.3-.5 2.4-1.6 3.2 1 .9 2.3 1.4 3.8 1.4h.6a6.9 6.9 0 0 0 5.6 2.7c4.9 0 8.4-3.3 8.4-8.3S17 3.3 12 3.3Z"/><circle cx="8.5" cy="11" r=".8"/><circle cx="15.5" cy="11" r=".8"/><path d="M9 14c1.7 1.2 4.3 1.2 6 0"/></svg>
+      </a>
+      <a class="reserve" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="reserve">שמירת מקומות בווטסאפ</a>
+      <button class="language" id="language" type="button" aria-label="Switch to English"><span dir="ltr">EN/<bdi dir="rtl">עב</bdi></span></button>
     </nav>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="home">
-      <div class="hero-media">
-        <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/photo-library/bar-action.webp" aria-label="אווירת אורנוס פאב">
-          <source src="assets/pub-night.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-content">
-        <p class="eyebrow">NETANYA'S ENGLISH PUB · EST. 1980</p>
-        <h1 data-t="hero">היום נשארתי<br>בבית.</h1>
-        <p class="hero-sub" data-t="subtitle">אורנוס פאב. כיכר העצמאות 13, נתניה.</p>
-        <a class="button" href="https://wa.link/2mtqrc" target="_blank" rel="noopener">
-          <span data-t="reserve">שמירת מקומות בווטסאפ</span><span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="hero-bottom">
-        <button class="video-toggle" id="videoToggle" type="button" aria-label="Pause background video">Ⅱ</button>
-        <a href="#about" data-t="scroll">קצת אורנוס ↓</a>
-      </div>
+  <main id="main-content" class="landing">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="kicker" dir="ltr">Uranus Pub · Netanya · ENGLISH PUB · EST. 1980</p>
+      <h1 id="hero-title" data-t="hero"><span class="headline-line">אורנוס פאב -</span><span class="headline-line">גם היום</span><span class="headline-line">נשארתי בבית.</span></h1>
+      <p class="highlights" dir="ltr">LOCAL PUB <span>|</span> BEER <span>|</span> FOOD <span>|</span> OPEN STAGE <span>|</span> MUSIC</p>
     </section>
 
-    <section class="story-section" id="about">
-      <div class="story-inner">
-        <p class="eyebrow">THE LOCAL. SINCE 1980.</p>
-        <h2 data-t="aboutTitle">עלינו</h2>
-        <span class="section-rule" aria-hidden="true"></span>
-        <p class="story-copy" data-t="about">הבר האנגלי האמיתי והאותנטי של נתניה, קיים מ1980 ומשלב בין לקוחות וותיקים של שנים ואווירה צעירה כאחד. בין אם זה דייט על הבר, בירה עם החברים, או סתם לנשנש את הכנפיים שלנו, האורנוס הוא בדיוק המקום בשבילכם.</p>
-        <p class="story-hours" data-t="aboutHours">יום ראשון עד שבת החל מהשעה 18:00 -1:30, ועד אחרון הלקוחות.</p>
-        <p class="story-cheers" data-t="aboutCheers">בואו להרים איתנו לחיים!</p>
-      </div>
-    </section>
-
-    <section class="beer-card-feature" aria-labelledby="beer-card-title">
-      <div class="beer-card-media">
-        <img src="assets/beer-card.png" alt="כרטיסיית הבירות של אורנוס פאב" loading="lazy" width="1200" height="630">
-      </div>
-      <div class="beer-card-copy">
-        <p class="eyebrow">OUR BEER CARD</p>
-        <h2 id="beer-card-title" data-t="beerCardTitle">כרטיסיית הבירות שלנו.</h2>
-        <p class="beer-card-details" data-t="beerCardDetails">כרטיסיית בירות - סה״כ 10 בירות גדולות מהחבית</p>
-      </div>
-    </section>
-
-    <section class="beer-feature" aria-labelledby="happy-title">
-      <div class="beer-feature-media">
-        <img src="assets/photo-library/bar-action.webp" alt="אורחים מרימים כוסית על הבר באורנוס פאב" loading="lazy" width="2400" height="1600">
-      </div>
-      <div class="beer-feature-copy">
-        <p class="eyebrow">EVERY DAY. CHEERS.</p>
-        <h2 id="happy-title">Happy Hour</h2>
-        <span class="section-rule" aria-hidden="true"></span>
-        <p class="body-copy" data-t="happyText">בכל ימות השבוע משעה 18:00 ועד שעה 20:00 מחכה לכם האפי האוור אצלנו, של 30% הנחה על כל תפריט האוכל והאלכוהול.</p>
-        <div class="feature-hours" dir="ltr">18:00<span>—</span>20:00</div>
-        <p class="alcohol-warning" role="note"><span class="warning-he">אזהרה: צריכה מופרזת של אלכוהול מסכנת חיים ומזיקה לבריאות!</span><span class="warning-en" lang="en" dir="ltr">Warning: Excessive consumption of alcohol is life-threatening and harmful to health!</span></p>
-      </div>
-    </section>
-
-    <section class="media-slider-section" id="food-drink" aria-labelledby="slider-title">
-      <div class="section-heading slider-heading">
-        <div><p class="eyebrow">FOOD. DRINKS. GOOD NIGHTS.</p><h2 id="slider-title" data-t="sliderTitle">האוכל. השתייה. האורנוס.</h2></div>
-        <div class="slider-controls">
-          <button class="slider-button" id="sliderPrev" type="button" data-label-t="sliderPrev" aria-label="לתמונה הקודמת">←</button>
-          <span class="slider-counter" id="sliderCounter" aria-live="polite">1 / 11</span>
-          <button class="slider-button" id="sliderNext" type="button" data-label-t="sliderNext" aria-label="לתמונה הבאה">→</button>
+    <div class="lower-panel">
+      <section class="social" data-label-t="socialLabel" aria-label="רשתות חברתיות">
+        <div class="social-links">
+          <a href="https://www.instagram.com/uranusbar/" target="_blank" rel="noopener" data-label-t="instagramLabel" aria-label="אורנוס פאב באינסטגרם">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r=".8" class="solid-dot"/></svg>
+          </a>
+          <a href="https://www.facebook.com/UranusPub" target="_blank" rel="noopener" data-label-t="facebookLabel" aria-label="אורנוס פאב בפייסבוק">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 20v-7h2.5l.4-3h-2.9V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.7-.1-1.5-.2-2.3-.2-2.3 0-3.9 1.4-3.9 4V10H8.2v3h2.6v7h3Z" class="solid-mark"/></svg>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=%D7%9B%D7%99%D7%9B%D7%A8+%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA+13+%D7%A0%D7%AA%D7%A0%D7%99%D7%94" target="_blank" rel="noopener" data-label-t="mapsLabel" aria-label="אורנוס פאב ב-Google Maps">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+          </a>
         </div>
-      </div>
-      <div class="media-slider" id="mediaSlider" tabindex="0" data-label-t="sliderRegion" aria-label="סליידר תמונות אוכל ושתייה">
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-01-table.webp" data-alt-t="slide1Alt" alt="שולחן מלא במנות באורנוס פאב" loading="eager" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-02-burger-service.webp" data-alt-t="slide2Alt" alt="מגיש מניח המבורגר על השולחן" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-03-burger-guest.webp" data-alt-t="slide3Alt" alt="אורחת נהנית מהמבורגר באורנוס" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-04-sharing-food.webp" data-alt-t="slide4Alt" alt="חברים חולקים מנות סביב השולחן" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-05-dessert.webp" data-alt-t="slide5Alt" alt="קינוח עם גלידה לצד בירה" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-06-cheers.webp" data-alt-t="slide6Alt" alt="מרימים כוסות לחיים באורנוס" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-07-cocktail.webp" data-alt-t="slide7Alt" alt="קוקטייל על בר העץ של אורנוס" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-08-beer-tap.webp" data-alt-t="slide8Alt" alt="מוזגים בירה קרה מהברז" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-09-pub-crowd.webp" data-alt-t="slide9Alt" alt="הקהל והאווירה באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-10-pub-poster.webp" data-alt-t="slide10Alt" alt="פריט וינטג׳ על קיר הפאב" loading="lazy" width="1080" height="1350"></figure>
-        <figure class="slider-slide"><img src="assets/photo-library/סליידר ראשון/slide-11-beers-table.webp" data-alt-t="slide11Alt" alt="שולחן חברים עם בירות באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
-      </div>
-    </section>
+      </section>
 
-    <section class="reserve-strip" aria-labelledby="reserve-strip-title">
-      <div><p class="eyebrow">YOUR TABLE. YOUR NIGHT.</p><h2 id="reserve-strip-title" data-t="reserveStripTitle">שומרים לכם מקום באורנוס.</h2></div>
-      <a class="button reserve-strip-button" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="reserve">שמירת מקומות בווטסאפ</a>
-    </section>
+      <section class="contact" data-label-t="contactLabel" aria-label="שעות פתיחה וכתובת">
+        <span data-t="days">ראשון - שבת</span>
+        <span class="separator" aria-hidden="true">•</span>
+        <span class="hours" dir="ltr">18:00 - 01:30</span>
+        <span class="separator" aria-hidden="true">•</span>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=%D7%9B%D7%99%D7%9B%D7%A8+%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA+13+%D7%A0%D7%AA%D7%A0%D7%99%D7%94" target="_blank" rel="noopener" data-t="address">כיכר העצמאות 13, נתניה.</a>
+      </section>
 
-    <section class="stage-feature" id="open-stage">
-      <div class="stage-feature-media"><img src="assets/photo-library/open-stage.webp" alt="במה פתוחה באורנוס, אחת לשבועיים ביום ראשון" loading="lazy" width="1350" height="898"></div>
-      <div class="stage-feature-copy">
-        <p class="eyebrow" data-t="stageEyebrow">SUNDAY · OPEN STAGE</p><h2 data-t="stageTitle">במה פתוחה</h2><span class="section-rule" aria-hidden="true"></span>
-        <p class="body-copy" data-t="stage">יום ראשון שלכם פנוי? מקווים שכן, כי זה בדיוק הזמן להגיע ב22:00 ביום ראשון אחת לשבועיים, לבמה פתוחה באורנוס, הופעות חיות, בירה קרה ואווירה מחממת.</p>
-        <p class="body-copy stage-extra" data-t="stageExtra">וזאת גם ההזדמנות שלכם לשיר ולהופיע בבמה הפתוחה!</p>
-        <a class="text-link" href="https://www.instagram.com/uranusbar/" target="_blank" rel="noopener" data-t="instagram">תשארו מעודכנים, פרטים באינסטגרם</a>
-      </div>
-    </section>
+      <p class="age-note" data-t="age">הכניסה מגיל 18 ומעלה בהצגת תעודה מזהה.</p>
 
-    <section class="remaining-gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="gallery-heading"><p class="eyebrow gallery-title" id="gallery-title">THE PEOPLE. THE PLACE.</p></div>
-      <div class="photo-mosaic">
-        <figure><img src="assets/photo-library/best%2010/DSC00470.webp" alt="צוות הבר מחייך מאחורי הדלפק" loading="lazy" width="2400" height="1600"></figure>
-        <figure><img src="assets/photo-library/best%2010/11.webp" alt="המבורגר וצ׳יפס באורנוס" loading="lazy" width="1080" height="1350"></figure>
-        <figure><img src="assets/photo-library/best%2010/DSC00570.webp" alt="חברים מרימים כוסית באורנוס" loading="lazy" width="2400" height="1600"></figure>
-        <figure><img src="assets/photo-library/best%2010/29.webp" alt="מזיגת בירה טרייה מהברז" loading="lazy" width="1080" height="1350"></figure>
-        <figure><img src="assets/photo-library/best%2010/DSC06992.webp" alt="אורחת נהנית מכוס בירה באורנוס" loading="lazy" width="2400" height="1600"></figure>
-        <figure><img src="assets/photo-library/best%2010/22.webp" alt="אוכל ושתייה סביב שולחן באורנוס" loading="lazy" width="1080" height="1350"></figure>
-        <figure><img src="assets/photo-library/best%2010/friends.webp" alt="חברים מבלים יחד באורנוס פאב" loading="lazy" width="1080" height="1350"></figure>
-      </div>
-    </section>
-
-    <section class="reviews-section" id="reviews">
-      <div class="reviews-intro">
-        <p class="eyebrow">FROM OUR GOOGLE REVIEWS</p><h2 data-t="reviewsTitle">מי שהיה, יודע.</h2>
-        <p class="review-rating"><strong>4.5 / 5</strong> <span data-t="ratingCount">מתוך 841 ביקורות Google</span></p>
-        <p class="muted" data-t="reviewSnapshot">נבדק ב-17.11.2026</p>
-        <a class="outline" href="https://share.google/IBmlb4L29uBYPiGFV" target="_blank" rel="noopener" data-t="googleReviews">לביקורות בגוגל ↗</a>
-      </div>
-      <div class="review-list">
-        <article class="review-item">
-          <header class="review-card-header"><span class="review-avatar" aria-hidden="true">א</span><div><a href="https://www.google.com/maps/contrib/113384491899682674726/reviews?hl=iw" target="_blank" rel="noopener">אושר עוזרי</a><p class="review-source"><span class="google-mark" aria-hidden="true">G</span> Google review</p></div></header>
-          <blockquote data-t="reviewOne">״אחד הפאבים הכי טוב שאני מכיר״</blockquote>
-        </article>
-        <article class="review-item">
-          <header class="review-card-header"><span class="review-avatar review-avatar-blue" aria-hidden="true">Y</span><div><a href="https://www.google.com/maps/contrib/106945907294409989774/reviews?hl=iw" target="_blank" rel="noopener">Yahav Bron</a><p class="review-source"><span class="google-mark" aria-hidden="true">G</span> Google review</p></div></header>
-          <blockquote data-t="reviewTwo">״אחלה מקום, נותן לנו את התחושה של נתניה של &quot;פעם&quot;״</blockquote>
-        </article>
-        <article class="review-item">
-          <header class="review-card-header"><span class="review-avatar review-avatar-green" aria-hidden="true">R</span><div><a href="https://www.google.com/maps/contrib/115951551822089594527/reviews?hl=iw" target="_blank" rel="noopener">Ronen Mars</a><p class="review-source"><span class="google-mark" aria-hidden="true">G</span> Google review</p></div></header>
-          <blockquote data-t="reviewThree">״בירה טעימה וצ'יפס מחמם את הלב״</blockquote>
-        </article>
-      </div>
-    </section>
-
-    <section class="remaining-gallery gallery-after-reviews" aria-label="תמונות נוספות מאורנוס פאב">
-      <div class="photo-mosaic photo-mosaic-final">
-        <figure><img src="assets/photo-library/best%2010/DSC07019.webp" alt="חברות מבלות יחד בפאב" loading="lazy" width="2400" height="1600"></figure>
-        <figure><img src="assets/photo-library/best%2010/8.webp" alt="פריט גינס על קיר הפאב" loading="lazy" width="1080" height="1350"></figure>
-        <figure><img src="assets/photo-library/best%2010/DSC07037.webp" alt="ערב עמוס ושמח סביב הבר" loading="lazy" width="2400" height="1600"></figure>
-        <figure><img src="assets/photo-library/best%2010/15.webp" alt="שתי כוסות בירה קרה באורנוס" loading="lazy" width="1080" height="1350"></figure>
-      </div>
-    </section>
-
-    <section class="visit-section" id="visit">
-      <p class="eyebrow">YOUR NEXT ROUND?</p><h2 data-t="visitTitle">שעות פתיחה</h2>
-      <p class="visit-hours" data-t="opening">ראשון - שבת | 18:00-01:30 | עד אחרון הלקוחות</p>
-      <p class="visit-tagline" data-t="closing">אורנוס פאב - גם היום נשארתי בבית.</p>
-      <div class="visit-contact-line">
-        <a class="visit-address" href="https://share.google/IBmlb4L29uBYPiGFV" target="_blank" rel="noopener" data-t="address">כיכר העצמאות 13, נתניה</a>
-        <span aria-hidden="true">|</span>
-        <a class="visit-phone" href="tel:+97298829919" dir="ltr">09-882-9919</a>
-      </div>
-      <div class="visit-buttons"><a class="button" href="https://wa.link/2mtqrc" target="_blank" rel="noopener" data-t="reserve">שמירת מקומות בווטסאפ</a><a class="outline" href="assets/uranus-menu.pdf" target="_blank" rel="noopener" data-t="menu">לתפריט</a><a class="outline" href="https://waze.com/ul/hsv8zcjdgs" target="_blank" rel="noopener" data-t="waze">ניווט ב־Waze ↗</a></div>
-    </section>
+      <aside class="alcohol-warning" role="note" data-label-t="warningLabel" aria-label="אזהרת צריכת אלכוהול">
+        <span data-t="warning">אזהרה: צריכה מופרזת של אלכוהול מסכנת חיים ומזיקה לבריאות!</span>
+      </aside>
+    </div>
   </main>
 
-  <footer>
-    <div class="footer-business"><strong>אורנוס פאב בע״מ | URANUS PUB LTD.</strong><span>כיכר העצמאות 13, נתניה · 13 Kikar Ha’atsmaut, Netanya</span><a href="tel:+97298829919" dir="ltr">09-882-9919</a></div>
-    <div class="social-links"><a href="https://www.instagram.com/uranusbar/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/UranusPub" target="_blank" rel="noopener">Facebook ↗</a><a href="https://share.google/IBmlb4L29uBYPiGFV" target="_blank" rel="noopener">Google ↗</a></div>
-    <div class="footer-support"><div class="legal-links"><a href="privacy.html">מדיניות פרטיות / Privacy</a><a href="terms.html">תקנון האתר / Terms</a><a href="accessibility.html">הצהרת נגישות / Accessibility</a><button class="privacy-settings" type="button" data-privacy-settings>הגדרות פרטיות / Privacy settings</button></div></div>
-  </footer>
-
-  <script src="app.js?v=20261119"></script>
+  <script src="app.js?v=20261120"></script>
 </body>
 </html>
